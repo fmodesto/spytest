@@ -16,8 +16,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.aspectj</groupId>
-            <artifactId>aspectjrt</artifactId>
+            <groupId>org.spytest</groupId>
+            <artifactId>spytest</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
 
@@ -29,6 +30,20 @@
                 <version>${aspectj-maven-plugin.version}</version>
                 <configuration>
                     <complianceLevel>1.6</complianceLevel>
+                    <aspectLibraries>
+                        <aspectLibrary>
+                            <groupId>org.spytest</groupId>
+                            <artifactId>spytest</artifactId>
+                        </aspectLibrary>
+                    </aspectLibraries>
+                    <sources>
+                        <source>
+                            <basedir>${project.basedir}/src/main/java</basedir>
+                            <excludes>
+                                <exclude>**/*Aspect.java</exclude>
+                            </excludes>
+                        </source>
+                    </sources>
                 </configuration>
                 <executions>
                     <execution>

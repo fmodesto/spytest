@@ -1,11 +1,12 @@
 package org.spytest.test;
 
 import org.junit.Test;
+import org.spytest.demo.App;
 
-public class AppTestTest {
+public class AppTest {
 
     @Test
     public void main() throws Exception {
-        new AppTest().foo();
+        App.main();
     }
 }
